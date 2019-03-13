@@ -1,6 +1,7 @@
 # AuthenticationServer
 Final course project from Modern java technologies course, winter 2019. 
-Authentication Server policeman
+
+Authentication Server 
 Да се имплементира прост authentication server.
 
 Условие
