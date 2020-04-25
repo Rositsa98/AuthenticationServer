@@ -2,34 +2,28 @@
 Final course project from Modern java technologies course, winter 2019. 
 
 Authentication Server 
-Да се имплементира прост authentication server.
 
-Условие
-Системата трябва да се състои от клиентска и сървърна част.
+The system contains client and server part.
 
-Сървър
-Сървърът трябва да може да обслужва множество клиенти едновременно.
-Сървърът трябва да предлага възможност за регистрация в системата. Регистрацията ще се извършва с username (уникален за базата на даден сървър), password, first name, last name, email.
-User информацията трябва да се пази във файл (ще играе ролята на база от данни за сървъра), като паролата не трябва да се пази в plain text.
-first name, last name и email полетата на user-a трябва да може да се редактират.
-Паролата на user-a трябва да може да се reset-ва.
-Клиент трябва да може да се автентицира пред сървъра със своето потребителско име и парола.
-Сесията е обект, който пази уникален идентификатор и time-to-live(ttl). След изтичане на time-to-live периода, сесията бива унищожена. Системата трябва да може да създава нова сесия при успешна автентикация с потребителско име и парола и да връща уникално session id на клиента, както и ttl-а на сесията.
-Системата трябва да позволява автентикация със session id, когато има успешно създадена сесия за даден user.
-Системата трябва да позволява logout по дадено session id, като операцията трябва да унищожава съответната сесия.
-При повторен login за даде user с username и password, предишната създадена сесия трябва да се терминира и да се създаде нова.
-Системата трябва да предлага опция за изтриване на user, която да изтрива всяка пазена информация в базата за даденият user, както и да терминира всички създадени за него сесии.
-Клиент
-Клиентската част на приложението има възможността да консумира предлаганите от сървъра операции. Клиентът трябва да имплементира следните команди:
+Server
+The server must be able to serve multiple clients simultaneously.
+The server must be able to log in to the system. Registration will be done with username (unique for the server), password, first name, last name, email.
+User information must be stored in a file (will play the role of a database server) and the password should not be stored in plain text.
+the first name, last name and email fields of the user must be editable.
+The user password must be reset.
+The client must be able to authenticate to the server with their username and password.
+A session is an object that holds a unique identifier and time-to-live (ttl). After the time-to-live period has expired, the session is destroyed. The system must be able to create a new session with successful user name and password authentication and return a unique session id to the client as well as the session ttl.
+The system must allow session id authentication when a session has been successfully created for a user.
+The system must allow logout for a given session id, and the operation must destroy the corresponding session.
+When logging in again to provide a user with username and password, the previously created session must be terminated and a new one created.
+The system must offer a user deletion option that deletes any stored information in the database for that user, as well as terminates all sessions created for the user.
+Client
+The client side of the application has the ability to consume the operations offered by the server. The client must implement the following commands:
 
 register --username <username> --password <password> --first-name <firstName> --last-name <lastName> --email <email>
 login -–username <username> --password <password>
 login -–session-id <sessionId>
 reset-password –-username <username> --old-password <oldPassword> --new-password <newPassword>
-update-user  -–session-id <session-id>  -–new-username <newUsername> --new-first-name <newFirstName> --new-last-name <newLastName> --new-email <email>. Всички параметри освен --session-id в тази команда са опционални.
+update-user -–session-id <session-id> -–new-username <newUsername> --new-first-name <newFirstName> --new-last-name <newLastName> --new-email <email>. All parameters except --session-id in this command are optional.
 logout –session-id <sessionId>
 delete-user –username <username>
-Submission
-Качете .zip архив на познатите папки src, test и resources (опционално, ако имате допълнителни файлове, които не са .java) в sapera.org. Там няма да има автоматизирани тестове. Проектът ви трябва да е качен в грейдъра не по-късно от 18:00 в деня преди датата на защитата.
-
-Успех!
