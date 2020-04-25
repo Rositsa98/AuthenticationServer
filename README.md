@@ -20,10 +20,16 @@ The system must offer a user deletion option that deletes any stored information
 Client
 The client side of the application has the ability to consume the operations offered by the server. The client must implement the following commands:
 
-register --username <username> --password <password> --first-name <firstName> --last-name <lastName> --email <email>
-login -–username <username> --password <password>
-login -–session-id <sessionId>
-reset-password –-username <username> --old-password <oldPassword> --new-password <newPassword>
-update-user -–session-id <session-id> -–new-username <newUsername> --new-first-name <newFirstName> --new-last-name <newLastName> --new-email <email>. All parameters except --session-id in this command are optional.
-logout –session-id <sessionId>
-delete-user –username <username>
+- register --username <username> --password <password> --first-name <firstName> --last-name <lastName> --email <email>
+
+- login -–username <username> --password <password>
+
+- login -–session-id <sessionId>
+
+- reset-password –-username <username> --old-password <oldPassword> --new-password <newPassword>
+
+- update-user -–session-id <session-id> -–new-username <newUsername> --new-first-name <newFirstName> --new-last-name <newLastName> --new-email <email>. All parameters except --session-id in this command are optional.
+
+- logout –session-id <sessionId>
+
+- delete-user –username <username>
